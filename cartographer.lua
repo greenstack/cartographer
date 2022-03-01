@@ -743,6 +743,7 @@ function Map:_loadImage(relativeImagePath)
 	if self._images[relativeImagePath] then return end
 	local imagePath = formatPath(self.dir .. relativeImagePath)
 	self._images[relativeImagePath] = love.graphics.newImage(imagePath)
+	self._images[relativeImagePath]:setFilter("nearest", "nearest")
 end
 
 -- Loads all of the images used by the map.
